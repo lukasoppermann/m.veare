@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="author" content="Lukas Oppermann - veare.net" />
+	<meta name="description" content="" />
+	<meta name="robots" content="index,follow" />
+	<meta name="language" content="en" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+	<link rel="favicon" href="./media/layout/favicon.ico" />
+	<style type="text/css" media="screen">
+	body{
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;			
+		background: url('street.jpg') no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
+		font-size: 14px;
+		color: rgb(25,25,25);
+	}
+	#button_about{
+		width: 150px;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;	
+		color: #7D7D7D;
+		text-decoration: none;
+		font-weight: bold;
+		padding: 7px 15px 9px 15px;
+		position: relative;
+		display: inline-block;
+		text-shadow: 0 1px 0 rgb(255,255,255);
+		background: #F0F0F0;
+		background-image: linear-gradient(top, whiteSmoke 40%, #EBEBEB 70%);
+		background-image: -o-linear-gradient(top, whiteSmoke 40%, #EBEBEB 70%);
+		background-image: -moz-linear-gradient(top, whiteSmoke 40%, #EBEBEB 70%);
+		background-image: -webkit-linear-gradient(top, whiteSmoke 40%, #EBEBEB 70%);
+		background-image: -ms-linear-gradient(top, whiteSmoke 40%, #EBEBEB 70%);
+		border: solid 1px gainsboro;
+		border-radius: 2px;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;		
+	}
+	.vcard{
+		margin: 10px auto 0px;
+		padding: 20px 20px 10px;
+		width: 200px;
+		display: inline-block;
+		text-align: left;
+	}
+	.vcard a{
+		display: block;
+		text-decoration: none;
+		color: inherit;
+	}
+	.title{
+		font-size: 14px;
+		line-height: 12px;
+		padding-bottom: 4px;
+		color: rgb(150,150,150);
+	}
+	.org, .email, .tel{
+		padding: 2px 0;
+	}
+	#contact{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -175px 0 0 -120px;
+		display: block;
+		text-align: center;
+		width: 240px;
+		height: 350px;
+		background: rgb(255,255,255);
+		box-shadow: 0px 1px 3px 0px rgba(0,0,0, 0.8);
+		-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0, 0.8);
+		-moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0, 0.8);
+		font-size: 16px;
+	}
+	/* Portrait */
+	@media screen and (max-width: 320px)
+	{
+		#logo img{
+			position: absolute;
+			left: 50%;
+			margin-left: -80px;
+		}
+		#logo{
+			position: relative;
+			width: 100%;
+			height: 130px;
+			margin-top: 20px;
+		}
+	}
+
+	/* Landscape */
+	@media screen and (min-width: 321px)
+	{
+		#logo img{
+			position: absolute;
+			left: 0px;
+		}
+		#logo{
+			position: absolute;
+			left: 20px;
+			width: 180px;
+			height: 130px;
+			margin-top: 10px;
+		}
+		#button_about{
+			margin-left: 200px;
+		}
+	}
+		
+	</style>
+	<title>veare.net | visionary design</title>
+</head>
+<body>
+	<div id="contact">
+		<div id="logo">
+			<img src="veare_signet.png" alt="veare.net - visionary design">
+		</div>
+		<div id="hcard-Lukas-Oppermann" class="vcard">
+			<span class="fn">Lukas Oppermann</span>
+			<div class="title">web & interface designer</div>
+			<a class="org url" href="www.veare.net">veare</a>
+			<a class="email" href="mailto:info@veare.net">info@veare.net</a>
+			<a class="tel" href="tel:+61403437360">+61 403 437 360</a>
+		</div>
+		<div id="button_about">
+			about me
+		</div>
+	</div>
+	<div id="about">
+	</div>
+</body>
+</html>
