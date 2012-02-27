@@ -14,7 +14,7 @@
 		padding: 0;
 		width: 100%;
 		height: 100%;			
-		background: url('street.jpg') no-repeat center center fixed;
+		background: url('media/street.jpg') no-repeat center center fixed;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -69,6 +69,7 @@
 	}
 	#contact{
 		position: absolute;
+		display: block;
 		top: 50%;
 		left: 50%;
 		margin: -175px 0 0 -120px;
@@ -83,39 +84,62 @@
 		font-size: 16px;
 	}
 	/* Portrait */
-	@media screen and (max-width: 320px)
-	{
+  @media screen and (max-width: 320px)
+    {
+        body{
+		    min-width: 320px;
+		    min-height: 480px;
+		}
 		#logo img{
 			position: absolute;
 			left: 50%;
 			margin-left: -80px;
 		}
 		#logo{
+		    display: block;
 			position: relative;
 			width: 100%;
 			height: 130px;
 			margin-top: 20px;
 		}
-	}
+  }
 
 	/* Landscape */
-	@media screen and (min-width: 321px)
-	{
-		#logo img{
-			position: absolute;
-			left: 0px;
+  @media screen and (min-width: 321px)
+    {
+        body{
+		    min-height: 320px;
+		    min-width: 480px;
 		}
-		#logo{
-			position: absolute;
-			left: 20px;
-			width: 180px;
-			height: 130px;
-			margin-top: 10px;
-		}
-		#button_about{
-			margin-left: 200px;
-		}
-	}
+        #logo img{
+            position: absolute;
+            left: 0px;
+            width: 120px;
+        }
+        #logo{
+            position: absolute;
+            left: 20px;
+            width: 120px;
+            height: 130px;
+            margin-top: 30px;
+        }
+        #button_about{
+            margin-left: 140px;
+        }
+        #contact{
+    		position: absolute;
+    		display: block;
+    		top: 50%;
+    		left: 50%;
+    		margin: -110px 0 0 -175px;
+    		text-align: center;
+    		height: 240px;
+    		width: 350px;
+    	}
+    	.vcard{
+    	    margin-left: 140px;
+    	}
+    }
 		
 	</style>
 	<title>veare.net | visionary design</title>
@@ -123,7 +147,7 @@
 <body>
 	<div id="contact">
 		<div id="logo">
-			<img src="veare_signet.png" alt="veare.net - visionary design">
+			<img src="media/veare_signet.png" alt="veare.net - visionary design">
 		</div>
 		<div id="hcard-Lukas-Oppermann" class="vcard">
 			<span class="fn">Lukas Oppermann</span>
