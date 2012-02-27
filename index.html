@@ -6,7 +6,10 @@
 	<meta name="description" content="" />
 	<meta name="robots" content="index,follow" />
 	<meta name="language" content="en" />
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0, user-scalable=no;">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />	
 	<link rel="favicon" href="./media/layout/favicon.ico" />
 	<style type="text/css" media="screen">
 	body{
@@ -24,6 +27,7 @@
 		color: rgb(25,25,25);
 	}
 	#button_about{
+	    visibility: hidden;
 		width: 150px;
 		border-radius: 5px;
 		-webkit-border-radius: 5px;
@@ -87,8 +91,8 @@
   @media screen and (max-width: 320px)
     {
         body{
-		    min-width: 320px;
-		    min-height: 480px;
+            height: auto;
+		    min-height: 460px;
 		}
 		#logo img{
 			position: absolute;
@@ -108,7 +112,7 @@
   @media screen and (min-width: 321px)
     {
         body{
-		    min-height: 320px;
+		    min-height: 300px;
 		    min-width: 480px;
 		}
         #logo img{
@@ -131,7 +135,7 @@
     		display: block;
     		top: 50%;
     		left: 50%;
-    		margin: -110px 0 0 -175px;
+    		margin: -120px 0 0 -175px;
     		text-align: center;
     		height: 240px;
     		width: 350px;
