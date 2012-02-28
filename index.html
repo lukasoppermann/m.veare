@@ -7,12 +7,14 @@
 	<meta name="robots" content="index,follow" />
 	<meta name="language" content="en" />
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0, user-scalable=no;">
-	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-icon-precomposed" href="./media/veare_icon.png" />	
+	<meta name="apple-mobile-web-app-capable" content="no" />
 	<meta name="apple-touch-fullscreen" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />	
-	<link rel="favicon" href="./media/layout/favicon.ico" />
+	<link rel="favicon" href="./media/favicon.ico" />
 	<style type="text/css" media="screen">
 	body{
+	    overflow: hidden;
 		margin: 0;
 		padding: 0;
 		width: 100%;
@@ -26,13 +28,17 @@
 		font-size: 14px;
 		color: rgb(25,25,25);
 	}
-	#button_about{
-	    visibility: hidden;
+	a{
+	    color: rgb(245,170,5);
+	}
+	#button_about, #button_contact{
+/*      visibility: hidden;*/
 		width: 150px;
 		border-radius: 5px;
 		-webkit-border-radius: 5px;
 		-moz-border-radius: 5px;	
 		color: #7D7D7D;
+		text-align: center;
 		text-decoration: none;
 		font-weight: bold;
 		padding: 7px 15px 9px 15px;
@@ -49,6 +55,12 @@
 		border-radius: 2px;
 		-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;		
+	}
+	#button_contact{
+	    position: absolute;
+	    left: 50%;
+	    margin-left: -90px;
+	    bottom: 10px;
 	}
 	.vcard{
 		margin: 10px auto 0px;
@@ -71,7 +83,7 @@
 	.org, .email, .tel{
 		padding: 2px 0;
 	}
-	#contact{
+	#flipbox, #contact{
 		position: absolute;
 		display: block;
 		top: 50%;
@@ -86,6 +98,23 @@
 		-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0, 0.8);
 		-moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0, 0.8);
 		font-size: 16px;
+	}
+	#about{
+	 	position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		margin: -175px 0 0 -120px;
+		padding: 10px;
+		display: block;
+		text-align: left;
+		width: 220px;
+		height: 330px;
+		background: rgb(255,255,255);
+		box-shadow: 0px 1px 3px 0px rgba(0,0,0, 0.8);
+		-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0, 0.8);
+		-moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0, 0.8);
+		font-size: 16px;   
 	}
 	/* Portrait */
   @media screen and (max-width: 320px)
@@ -130,7 +159,7 @@
         #button_about{
             margin-left: 140px;
         }
-        #contact{
+        #flipbox, #contact, #about{
     		position: absolute;
     		display: block;
     		top: 50%;
@@ -139,6 +168,9 @@
     		text-align: center;
     		height: 240px;
     		width: 350px;
+    	}
+    	#about{
+    		text-align: left;
     	}
     	.vcard{
     	    margin-left: 140px;
@@ -149,22 +181,61 @@
 	<title>veare.net | visionary design</title>
 </head>
 <body>
-	<div id="contact">
-		<div id="logo">
-			<img src="media/veare_signet.png" alt="veare.net - visionary design">
-		</div>
-		<div id="hcard-Lukas-Oppermann" class="vcard">
-			<span class="fn">Lukas Oppermann</span>
-			<div class="title">web & interface designer</div>
-			<a class="org url" href="www.veare.net">veare</a>
-			<a class="email" href="mailto:info@veare.net">info@veare.net</a>
-			<a class="tel" href="tel:+61403437360">+61 403 437 360</a>
-		</div>
-		<div id="button_about">
-			about me
-		</div>
+    <!-- <div id="flipbox"> -->
+    	<div id="flipbox">
+    		<div id="logo">
+    			<img src="media/veare_signet.png" alt="veare.net - visionary design">
+    		</div>
+    		<div id="hcard-Lukas-Oppermann" class="vcard">
+    			<span class="fn">Lukas Oppermann</span>
+    			<div class="title">web & interface designer</div>
+    			<a class="org url" href="www.veare.net">veare</a>
+    			<a class="email" href="mailto:info@veare.net">info@veare.net</a>
+    			<a class="tel" href="tel:+61403437360">+61 403 437 360</a>
+    		</div>
+    		<a id="button_about">
+    			about me
+    		</a>
+        <!-- </div> -->
 	</div>
-	<div id="about">
-	</div>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.flip.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+	var contact = '<div id="logo"><img src="media/veare_signet.png" alt="veare.net - visionary design"></div>'+
+	'<div id="hcard-Lukas-Oppermann" class="vcard">'+
+		'<span class="fn">Lukas Oppermann</span>'+
+		'<div class="title">web & interface designer</div>'+
+		'<a class="org url" href="www.veare.net">veare</a>'+
+		'<a class="email" href="mailto:info@veare.net">info@veare.net</a>'+
+		'<a class="tel" href="tel:+61403437360">+61 403 437 360</a>'+
+	'</div><div id="button_about" onclick="fn_about();">about me</div>';
+	var about = '<div id="about">I am an interface & information designer who enjoys devoting his life to plan, design & scrutinize fancy & usable interfaces.<br /> I also have a nack for typography.<br /><br />'+
+    'If you want to see what I do, check out <a href="http://dribbble.com/lukasoppermann">dribbble</a>. You can also find me on <a href="https://twitter.com/#!/lukasoppermann">twitter</a> and <a href="http://au.linkedin.com/in/lukasoppermann">LinkedIn</a>.<div id="button_contact" onclick="fn_contact();">contact details</div></div>';
+    
+	function fn_about()
+    {
+        $("#flipbox").flip({
+           	direction:'rl',
+           	speed: 200,
+           	content: about,
+           	color: 'rgb(255,255,255)'
+        });
+    }
+    function fn_contact()
+    {
+        $("#flipbox").flip({
+           	direction:'rl',
+           	speed: 200,
+           	content: contact,
+           	color: 'rgb(255,255,255)'
+        });
+    }
+	$(function(){	    
+
+       $("#button_about").click(function(){
+           fn_about();
+        });
+    });
+	</script>
 </body>
 </html>
